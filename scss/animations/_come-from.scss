@@ -1,0 +1,28 @@
+@keyframes come-from-left {
+  0% {
+    margin-left: -200px;
+  }
+
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes come-from-right {
+  0% {
+    margin-right: -200px;
+  }
+
+  100% {
+    margin-right: 0px;
+  }
+}
+
+@keyframes come-from-bottom {
+  0% {
+    transform: translateY(200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

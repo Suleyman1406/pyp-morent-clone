@@ -13,6 +13,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     h1 {
+      animation: come-from-left forwards 1s;
       @include text(3.2rem, 700, $primary-default-500, 4.8rem);
       text-transform: uppercase;
       order: 1;
@@ -37,6 +38,10 @@ header {
         margin-top: 0;
         width: 30%;
         order: 2;
+      }
+
+      &:hover {
+        border: 1px solid rgba(195, 212, 233, 1);
       }
 
       input {
@@ -70,6 +75,7 @@ header {
     }
 
     .right-nav-container {
+      animation: come-from-right forwards 1s;
       margin-left: auto;
       display: flex;
       align-items: center;
@@ -86,8 +92,22 @@ header {
         position: relative;
         margin-right: 20px;
         display: none;
+        transition: 0.3s;
         @include for-size(laptop) {
           display: block;
+        }
+
+        &:hover {
+          border-color: $primary-dark-600;
+          cursor: pointer;
+          svg path {
+            fill: white;
+            stroke: $primary-dark-600;
+          }
+          #red-dot {
+            background-color: white;
+            border: 1px solid #ff4423;
+          }
         }
 
         #red-dot {

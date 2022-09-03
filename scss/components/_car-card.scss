@@ -5,6 +5,17 @@
   border-radius: 10px;
   position: relative;
   min-width: 304px;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    .car-img-container {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
 
   h2 {
     @include text(2rem, 700, $secondinary-default-500, 3rem);
@@ -21,6 +32,7 @@
     justify-content: center;
     margin: 64px 0;
     img {
+      transition: 0.5s;
       max-width: 250px;
       width: fit-content;
     }
