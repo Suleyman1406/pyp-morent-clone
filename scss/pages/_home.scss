@@ -1,0 +1,312 @@
+#home-body {
+  #welcome-section {
+    width: 100%;
+    background-color: #f6f7f9;
+    padding: 0 24px 32px;
+    transition: 0.5s;
+    margin-bottom: -120px;
+
+    @include for-size(tablet) {
+      padding: 32px 64px 16px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 0;
+    }
+    .welcome-cards-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      gap: 32px;
+
+      .card {
+        flex-grow: 1;
+        overflow: hidden;
+        background-color: $information-default-500;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        height: 232px;
+        transform: translateY(-116px);
+        transition: 0.5s;
+
+        @include for-size(laptop) {
+          height: auto;
+        }
+        @include for-size(laptop) {
+          transform: translateY(0);
+        }
+
+        div {
+          position: absolute;
+          top: 24px;
+          left: 24px;
+          width: 240px;
+          transition: 0.5s;
+
+          @include for-size(phone) {
+            width: auto;
+          }
+
+          @include for-size(tablet) {
+            width: 300px;
+          }
+
+          h1 {
+            @include text(1.6rem, 600, $white, 2.4rem);
+            @include for-size(laptop) {
+              @include text(3.2rem, 600, $white, 4.8rem);
+            }
+            margin-bottom: 16px;
+          }
+
+          h3 {
+            @include text(1.2rem, 500, $white, 1.92rem);
+            @include for-size(laptop) {
+              @include text(1.6rem, 500, $white, 2.4rem);
+            }
+            height: auto;
+            margin-bottom: 20px;
+          }
+        }
+
+        img {
+          width: 100%;
+          align-self: flex-end;
+        }
+      }
+
+      .card:nth-child(1) {
+        animation: come-from-left forwards 1s;
+      }
+      .card:nth-child(2) {
+        animation: come-from-right forwards 1s;
+        background-color: $primary-default-500;
+        display: none;
+
+        button {
+          background-color: $information-default-500;
+        }
+
+        button:active {
+          background-color: $primary-dark-700;
+        }
+
+        @include for-size(desktop) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  #filter-section {
+    width: 100%;
+    background-color: #f6f7f9;
+    padding: 16px 24px 16px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    animation: come-with-opacity forwards 3s;
+    @include for-size(tablet) {
+      padding: 16px 64px 21px;
+      margin-top: 0;
+    }
+
+    @include for-size(desktop) {
+      gap: 44px;
+      flex-direction: row;
+    }
+
+    .filter-container {
+      flex-grow: 1;
+      padding: 18px 0 18px 16px;
+      background-color: $white;
+      border-radius: 10px;
+      overflow: hidden;
+
+      @include for-size(tablet) {
+        padding: 24px 0 28px 48px;
+      }
+
+      h4 {
+        margin-bottom: 8px;
+        span {
+          @include text(1.6rem, 600, #000, 2.4rem);
+          display: inline-block;
+          margin-left: 8px;
+          transform: translateY(-2.5px);
+        }
+        @include for-size(tablet) {
+          margin-bottom: 16px;
+        }
+      }
+
+      .filter-cols {
+        display: flex;
+        justify-content: space-around;
+        gap: 24px;
+
+        .col {
+          flex-grow: 1;
+          h4 {
+            @include text(1.6rem, 700, #000, 2.4rem);
+          }
+          div {
+            .select {
+              position: relative;
+              width: 100%;
+              svg {
+                position: absolute;
+                right: 12px;
+                top: calc(50% - 3px);
+                width: 10px;
+                height: 6px;
+                stroke-width: 2px;
+                stroke: #9098a9;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                pointer-events: none;
+              }
+              select {
+                -webkit-appearance: none;
+                padding-right: 25px;
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+                background: #fff;
+                box-shadow: none;
+                cursor: pointer;
+                font-weight: 500;
+                font-size: 12px;
+                transition: all 150ms ease;
+              }
+              select:required:invalid {
+                color: #5a667f;
+              }
+              select option {
+                color: #223254;
+              }
+              select option[value=""][disabled] {
+                display: none;
+              }
+              select:focus {
+                outline: none;
+                border-color: $primary-dark-700;
+              }
+              select:hover + svg {
+                stroke: $primary-dark-700;
+              }
+            }
+
+            .sprites {
+              position: absolute;
+              width: 0;
+              height: 0;
+              pointer-events: none;
+              user-select: none;
+            }
+          }
+        }
+        .vl {
+          border-left: 1px solid rgba(195, 212, 233, 0.4);
+          height: auto;
+        }
+      }
+    }
+
+    button {
+      width: fit-content;
+      height: fit-content;
+      padding: 18px;
+      margin: -14px auto;
+      z-index: 99;
+      animation: come-from-bottom forwards 3s;
+
+      @include for-size(desktop) {
+        margin: auto;
+      }
+    }
+  }
+
+  #pop-car-section {
+    width: 100%;
+    background-color: #f6f7f9;
+    padding: 16px 24px 16px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include for-size(tablet) {
+      padding: 21px 64px 32px;
+      margin-top: 0;
+    }
+
+    .pop-cars-container {
+      width: 100%;
+      display: flex;
+      gap: 32px;
+      justify-content: space-between;
+      overflow-x: scroll;
+      margin-bottom: 42px;
+    }
+  }
+
+  #recomendation-car-section {
+    width: 100%;
+    background-color: #f6f7f9;
+    padding: 16px 24px 32px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+
+    @include for-size(tablet) {
+      padding: 21px 64px 32px;
+      margin-top: 0;
+    }
+    .recomendation-cars-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .car-count {
+      @include text(1.4rem, 500, $secondinary-light-300, 2.1rem);
+      margin-top: 42px;
+      position: absolute;
+      bottom: 74px;
+      right: 64px;
+    }
+  }
+
+  #pop-car-section .heading,
+  #recomendation-car-section .heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    h4 {
+      @include text(1.6rem, 600, $secondinary-light-300, 2.016rem);
+    }
+
+    a {
+      @include text(1.6rem, 600, $primary-default-500, 2.016rem);
+      text-decoration: none;
+      transition: 0.3s;
+      &:hover {
+        color: $primary-dark-800;
+      }
+    }
+  }
+}
+
+// @include for-size(phone) {
+// }
+// @include for-size(tablet) {
+// }
+// @include for-size(desktop) {
+// }
