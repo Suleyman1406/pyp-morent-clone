@@ -1,0 +1,22 @@
+{
+  "name": "pyp-morent-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch scss -o ./public/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suleyman1406/pyp-morent-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suleyman1406/pyp-morent-clone/issues"
+  },
+  "homepage": "https://github.com/Suleyman1406/pyp-morent-clone#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

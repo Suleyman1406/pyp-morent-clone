@@ -1,0 +1,65 @@
+.btn-primary-label {
+  @include for-size(phone) {
+    @include button(
+      12px,
+      5px 16px,
+      $white,
+      $primary-default-500,
+      $primary-dark-700,
+      10px
+    );
+  }
+  @include for-size(tablet) {
+    @include button(
+      12px,
+      9px 16px,
+      $white,
+      $primary-default-500,
+      $primary-dark-700,
+      10px
+    );
+  }
+  @include for-size(desktop) {
+    @include button(
+      16px,
+      14px 23.5px,
+      $white,
+      $primary-default-500,
+      $primary-dark-700,
+      10px
+    );
+  }
+}
+
+.btn-primary-icon {
+  @include for-size(phone) {
+    @include button(
+      12px,
+      8px,
+      $white,
+      $primary-default-500,
+      $primary-dark-700,
+      10px
+    );
+  }
+  @include for-size(tablet) {
+    @include button(
+      12px,
+      9px 16px,
+      $white,
+      $primary-default-500,
+      $primary-dark-700,
+      10px
+    );
+  }
+  @include for-size(desktop) {
+    @include button(
+      16px,
+      16px 15px,
+      $white,
+      $primary-default-500,
+      $primary-dark-700,
+      10px
+    );
+  }
+}

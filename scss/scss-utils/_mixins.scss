@@ -1,0 +1,47 @@
+@mixin for-size($size) {
+  @if $size == mini-phone {
+    @media (min-width: 0px) {
+      @content;
+    }
+  } @else if $size == phone {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin button(
+  $fontSize,
+  $padding,
+  $color,
+  $backgroundColor,
+  $activeBackgroundColor,
+  $gap
+) {
+  background-color: $backgroundColor;
+  font-size: $fontSize;
+  padding: $padding;
+  color: $color;
+  gap: $gap;
+  transition: 0.3s all;
+  border-radius: 4px;
+  display: flex;
+  border: none;
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $activeBackgroundColor;
+  }
+}
