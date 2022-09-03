@@ -1,0 +1,159 @@
+@mixin flex($justify-content, $align-items, $flex-direction, $gap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  gap: $gap;
+}
+
+#payment-body {
+  background-color: #f6f7f9;
+}
+
+// ! Billing info section
+.payment-container {
+  //   position: absolute;
+  //   top: 3.2rem;
+  //   left: 3.2rem;
+  padding: 3.2rem;
+  //   width: calc(100vw - 65rem);
+  @include flex(space-between, initial, row, 3.2rem);
+  @include for-size(phone) {
+    padding: 2.4rem;
+  }
+}
+
+.payment-header {
+  @include flex(space-between, center, row, initial);
+}
+
+.payment-label {
+  display: block;
+  margin-block: 2.4rem;
+  @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
+}
+
+.payment-details {
+  background-color: $white;
+  border-radius: 1rem;
+  padding: 2.4rem;
+  flex: 2;
+}
+
+.user-info {
+  > div {
+    @include flex(space-between, center, row, 3.2rem);
+
+    > div {
+      flex: 1;
+      @include flex(space-between, stretch, column, initial);
+
+      input {
+        flex: 1;
+        border: none;
+        border-radius: 1rem;
+        padding: 1.6rem 3.2rem;
+        background-color: #f6f7f9;
+        @include text(1.4rem, 500, $secondinary-light-300, 1.5rem);
+        &::placeholder {
+          color: $secondinary-light-300;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+h2 {
+  @include text(2rem, 700, $secondinary-default-500, 3rem);
+}
+
+p {
+  @include text(1.4rem, 500, $secondinary-light-300, 2.1rem);
+}
+
+// ! Rental summary Section
+
+.rental-summary {
+  flex: 1;
+  align-self: flex-start;
+  padding: 2.4rem;
+  background-color: $white;
+  border-radius: 1rem;
+  //   position: fixed;
+  //   top: 3.2rem;
+  //   right: 3.2rem;
+  //   width: 48em;
+}
+
+.car {
+  padding-block: 3.2rem;
+  @include flex(flex-start, center, row, 1.6rem);
+  border-bottom: thin solid #c3d4e966;
+}
+
+.rental-car-info {
+  h1 {
+    @include text(3.2rem, 700, $secondinary-default-500, 4.8rem);
+  }
+
+  > div {
+    @include flex(flex-start, center, row, 1rem);
+  }
+}
+
+.rental-car-img {
+  background-color: $primary-default-500;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+}
+
+.total-price {
+  > div {
+    margin-block: 2.4rem;
+    @include flex(space-between, center, row, 1rem);
+
+    span {
+      @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
+    }
+  }
+}
+
+.promo-input {
+  background-color: #f6f7f9;
+  border-radius: 1rem;
+  padding-right: 3.2rem;
+
+  @include flex(space-between, center, row, initial);
+
+  input {
+    all: unset;
+    flex: 1;
+    padding: 1.6rem 3.2rem;
+    @include text(1.4rem, 500, $secondinary-light-300, 1.5rem);
+
+    &::placeholder {
+      @include text(1.4rem, 500, $secondinary-light-300, 1.5rem);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
+
+    &:hover {
+      color: $secondinary-light-300;
+    }
+  }
+}
+
+.total-rental-price {
+  margin-block: 2.4rem;
+  @include flex(space-between, center, row, initial);
+
+  h1 {
+    @include text(3.2rem, 700, $secondinary-default-500, 4rem);
+  }
+}

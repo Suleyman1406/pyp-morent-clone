@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --watch scss -o ./public/css"
+    "build:sass": "node-sass -r --output-style compressed scss/main.scss -o public/css",
+    "watch:sass": "npm run build:sass && npm run build:sass -- -w"
   },
   "repository": {
     "type": "git",
