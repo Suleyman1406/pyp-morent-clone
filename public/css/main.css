@@ -125,12 +125,12 @@ table {
 * {
   font-family: "Plus Jakarta Sans", sans-serif; }
 
-@media (max-width: 599px) {
+@media (max-width: 480px) {
   .btn-primary-label {
-    background-color: #3563E9;
+    background-color: #3563e9;
     font-size: 12px;
     padding: 5px 16px;
-    color: #FFFFFF;
+    color: #ffffff;
     gap: 10px;
     transition: 0.3s all;
     border-radius: 4px;
@@ -140,14 +140,14 @@ table {
     .btn-primary-label:hover {
       cursor: pointer; }
     .btn-primary-label:active {
-      background-color: #1A37A7; } }
+      background-color: #1a37a7; } }
 
-@media (min-width: 600px) {
+@media (min-width: 481px) {
   .btn-primary-label {
-    background-color: #3563E9;
+    background-color: #3563e9;
     font-size: 12px;
     padding: 9px 16px;
-    color: #FFFFFF;
+    color: #ffffff;
     gap: 10px;
     transition: 0.3s all;
     border-radius: 4px;
@@ -157,14 +157,14 @@ table {
     .btn-primary-label:hover {
       cursor: pointer; }
     .btn-primary-label:active {
-      background-color: #1A37A7; } }
+      background-color: #1a37a7; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .btn-primary-label {
-    background-color: #3563E9;
+    background-color: #3563e9;
     font-size: 16px;
     padding: 14px 23.5px;
-    color: #FFFFFF;
+    color: #ffffff;
     gap: 10px;
     transition: 0.3s all;
     border-radius: 4px;
@@ -174,14 +174,14 @@ table {
     .btn-primary-label:hover {
       cursor: pointer; }
     .btn-primary-label:active {
-      background-color: #1A37A7; } }
+      background-color: #1a37a7; } }
 
-@media (max-width: 599px) {
+@media (max-width: 480px) {
   .btn-primary-icon {
-    background-color: #3563E9;
+    background-color: #3563e9;
     font-size: 12px;
     padding: 8px;
-    color: #FFFFFF;
+    color: #ffffff;
     gap: 10px;
     transition: 0.3s all;
     border-radius: 4px;
@@ -191,14 +191,14 @@ table {
     .btn-primary-icon:hover {
       cursor: pointer; }
     .btn-primary-icon:active {
-      background-color: #1A37A7; } }
+      background-color: #1a37a7; } }
 
-@media (min-width: 600px) {
+@media (min-width: 481px) {
   .btn-primary-icon {
-    background-color: #3563E9;
+    background-color: #3563e9;
     font-size: 12px;
     padding: 9px 16px;
-    color: #FFFFFF;
+    color: #ffffff;
     gap: 10px;
     transition: 0.3s all;
     border-radius: 4px;
@@ -208,14 +208,14 @@ table {
     .btn-primary-icon:hover {
       cursor: pointer; }
     .btn-primary-icon:active {
-      background-color: #1A37A7; } }
+      background-color: #1a37a7; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .btn-primary-icon {
-    background-color: #3563E9;
+    background-color: #3563e9;
     font-size: 16px;
     padding: 16px 15px;
-    color: #FFFFFF;
+    color: #ffffff;
     gap: 10px;
     transition: 0.3s all;
     border-radius: 4px;
@@ -225,4 +225,4 @@ table {
     .btn-primary-icon:hover {
       cursor: pointer; }
     .btn-primary-icon:active {
-      background-color: #1A37A7; } }
+      background-color: #1a37a7; } }

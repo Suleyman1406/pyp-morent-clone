@@ -1,18 +1,22 @@
 @mixin for-size($size) {
   @if $size == mini-phone {
-    @media (min-width: 0px) {
+    @media (max-width: map-get($media, "xs")) {
       @content;
     }
   } @else if $size == phone {
-    @media (max-width: 599px) {
+    @media (max-width: map-get($media, "sm")) {
       @content;
     }
   } @else if $size == tablet {
-    @media (min-width: 600px) {
+    @media (min-width: map-get($media, "md")) {
+      @content;
+    }
+  } @else if $size == laptop {
+    @media (min-width: map-get($media, "lg")) {
       @content;
     }
   } @else if $size == desktop {
-    @media (min-width: 1200px) {
+    @media (min-width: map-get($media, "xl")) {
       @content;
     }
   }
@@ -44,4 +48,11 @@
   &:active {
     background-color: $activeBackgroundColor;
   }
+}
+
+@mixin text($fontsize, $fontWeight, $color, $lineHeight) {
+  font-size: $fontsize;
+  font-weight: $fontWeight;
+  color: $color;
+  line-height: $lineHeight;
 }
