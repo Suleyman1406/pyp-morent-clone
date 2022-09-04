@@ -44,6 +44,11 @@
   border: none;
   font-weight: 600;
 
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
   &:hover {
     cursor: pointer;
   }
