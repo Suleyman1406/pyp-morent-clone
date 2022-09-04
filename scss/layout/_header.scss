@@ -13,17 +13,18 @@ header {
     align-items: center;
     flex-wrap: wrap;
     h1 {
-      animation: come-from-left forwards 1s;
       @include text(3.2rem, 700, $primary-default-500, 4.8rem);
+      animation: come-from-top forwards 1s;
       text-transform: uppercase;
       order: 1;
       @include for-size(laptop) {
+        animation: come-from-left forwards 1s;
         margin-right: 64px;
       }
     }
 
     .search-input-container {
-      width: calc(100% - 66px);
+      width: calc(100% - 67px);
       display: flex;
       justify-content: space-evenly;
       align-items: center;
@@ -75,13 +76,14 @@ header {
     }
 
     .right-nav-container {
-      animation: come-from-right forwards 1s;
       margin-left: auto;
       display: flex;
       align-items: center;
       order: 2;
+      animation: come-from-top forwards 1s;
 
       @include for-size(laptop) {
+        animation: come-from-right forwards 1s;
         order: 3;
       }
 
@@ -95,6 +97,10 @@ header {
         transition: 0.3s;
         @include for-size(laptop) {
           display: block;
+        }
+
+        svg {
+          transform: translateY(1.5px);
         }
 
         &:hover {
