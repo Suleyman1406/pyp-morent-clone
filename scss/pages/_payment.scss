@@ -6,6 +6,10 @@
   gap: $gap;
 }
 
+.payment-error {
+  border: 1px solid $error-default-500 !important;
+}
+
 .payment-main-header {
   background: $white;
   padding: 2rem 6rem !important;
@@ -107,7 +111,7 @@
       @include flex(space-between, stretch, column, initial);
       input {
         flex: 1;
-        border: none;
+        border: 1px solid transparent;
         border-radius: 1rem;
         padding: 1.6rem 3.2rem;
         background-color: #f6f7f9;
