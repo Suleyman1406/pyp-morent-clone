@@ -112,4 +112,45 @@ function handleError(input) {
   setTimeout(() => { input.classList.remove('payment-error') }, 4000)
 }
 
-console.log(window.location.href);
+// Display Data
+// const url = window.location.search;
+const url = "127.0.0.1:5000/public/payment.html?carId=2?type=rec";
+const totalPrice = document.querySelector('.total-price-data');
+const subTotal = document.querySelector('.sub-price-data');
+const carName = document.querySelector('.main-car-name');
+const carImg = document.querySelector('.main-car-img');
+
+let params = new URLSearchParams(url);
+let carType = null;
+let carID = null;
+let displayCar = null;
+
+for (const key of params.values()) {
+  console.log(key);
+  carType = key.slice(-3);
+  carID = parseInt(key.slice(0, 2))
+}
+
+if (carType === "rec") {
+
+  displayCar = recomendation_cars.find(car => {
+    if (car.id === carID) {
+      return car
+    }
+  })
+} else {
+  displayCar = popular_cars.find(car => {
+    if (car.id === carID) {
+      return car
+    }
+  })
+}
+
+if (displayCar) {
+  carName.textContent = displayCar.name
+  totalPrice.textContent = displayCar.price;
+  subTotal.textContent = displayCar.price;
+  carImg.src = displayCar.img;
+  carImg.alt = displayCar.name
+}
+
