@@ -6,17 +6,44 @@
   gap: $gap;
 }
 
+.payment-main-header {
+  background: $white;
+  padding: 2rem 6rem !important;
+  position: fixed;
+  z-index: 9;
+  box-shadow: 0px 6px 62px -56px rgba(0, 0, 0, 0.75);
+
+  @include for-size(laptop) {
+    position: static;
+    box-shadow: none;
+  }
+}
+
 #payment-body {
   background-color: #f6f7f9;
 
-  @include for-size(laptop) {
-    overflow: hidden;
+  h2 {
+    @include text(1.6rem, 700, $secondinary-default-500, 2.4rem);
+
+    @include for-size(laptop) {
+      @include text(2rem, 700, $secondinary-default-500, 3rem);
+    }
+  }
+
+  p {
+    @include text(1.4rem, 500, $secondinary-light-300, 2.1rem);
   }
 }
 
 // ! Billing info section
 .payment-container {
+  position: relative;
+  top: 17.3rem;
   padding: 3.2rem;
+
+  @include for-size(laptop) {
+    position: static;
+  }
   @include flex(space-between, initial, column, 3.2rem);
 
   @include for-size(laptop) {
@@ -30,6 +57,7 @@
 }
 
 .payment-header {
+  padding: 0;
   @include flex(space-between, center, row, 2.4rem);
 
   @include for-size(phone) {
@@ -97,18 +125,6 @@
   label {
     margin-bottom: 2.4rem;
   }
-}
-
-h2 {
-  @include text(1.6rem, 700, $secondinary-default-500, 2.4rem);
-
-  @include for-size(laptop) {
-    @include text(2rem, 700, $secondinary-default-500, 3rem);
-  }
-}
-
-p {
-  @include text(1.4rem, 500, $secondinary-light-300, 2.1rem);
 }
 
 // ! Rental summary Section
@@ -241,7 +257,9 @@ p {
   margin-block: 3.2rem;
   background-color: $white;
   border-radius: 1rem;
-
+  header {
+    padding: 0;
+  }
   > div {
     background-color: #f6f7f9;
     padding: 2.4rem;
@@ -302,6 +320,7 @@ p {
 
 .confirmation-footer {
   margin-top: 3.2rem;
+  padding: 0;
   h3 {
     @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
     margin-top: 2rem;
