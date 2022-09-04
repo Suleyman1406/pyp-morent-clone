@@ -13,7 +13,6 @@ let shownCardCount = 8;
 
 popular_cars.forEach((car) => {
   let newCard = popCarCardTemplate.cloneNode(true);
-
   newCard.className = "car-card";
   newCard.id = `pop-car-card-${car.id}`;
   newCard.children[0].textContent = car.name;
