@@ -8,15 +8,13 @@
 
 #payment-body {
   background-color: #f6f7f9;
+  overflow: hidden;
 }
 
 // ! Billing info section
 .payment-container {
-  //   position: absolute;
-  //   top: 3.2rem;
-  //   left: 3.2rem;
   padding: 3.2rem;
-  //   width: calc(100vw - 65rem);
+  height: 100vh;
   @include flex(space-between, initial, row, 3.2rem);
   @include for-size(phone) {
     padding: 2.4rem;
@@ -35,6 +33,11 @@
 
 .payment {
   flex: 2;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .payment-details {
@@ -88,10 +91,6 @@ p {
   padding: 2.4rem;
   background-color: $white;
   border-radius: 1rem;
-  //   position: fixed;
-  //   top: 3.2rem;
-  //   right: 3.2rem;
-  //   width: 48em;
 }
 
 .car {
