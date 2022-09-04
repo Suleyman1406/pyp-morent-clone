@@ -1,4 +1,5 @@
 #home-body {
+  overflow-x: hidden;
   #welcome-section {
     width: 100%;
     background-color: #f6f7f9;
@@ -106,7 +107,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    animation: come-with-opacity forwards 3s;
+    // animation: come-with-opacity forwards 3s;
     @include for-size(tablet) {
       padding: 16px 64px 21px;
       margin-top: 0;
@@ -123,6 +124,14 @@
       background-color: $white;
       border-radius: 10px;
       overflow: hidden;
+
+      &:nth-child(1) {
+        animation: come-with-transform-from-left ease-in-out 2s;
+      }
+
+      &:nth-child(3) {
+        animation: come-with-transform-from-right ease-in-out 2s;
+      }
 
       @include for-size(tablet) {
         padding: 24px 0 28px 48px;
@@ -145,9 +154,9 @@
         display: flex;
         justify-content: space-around;
         gap: 24px;
-
         .col {
           flex-grow: 1;
+
           h4 {
             @include text(1.6rem, 700, #000, 2.4rem);
           }
