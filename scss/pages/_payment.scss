@@ -6,10 +6,24 @@
   gap: $gap;
 }
 
+.payment-error,
+.selected.payment-error,
+.confirmation-label.payment-error {
+  border: 1px solid $error-default-500 !important;
+}
+
 .payment-main-header {
   background: $white;
-  padding-bottom: 2rem;
+  padding-bottom: 2rem !important;
   z-index: 9;
+}
+
+.main-car-img {
+  width: 17rem;
+
+  @include for-size(phone) {
+    width: 12rem;
+  }
 }
 
 #payment-body {
@@ -73,8 +87,8 @@
   order: 2;
   @include for-size(laptop) {
     order: 1;
+    overflow-y: scroll;
   }
-  overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -99,7 +113,7 @@
       @include flex(space-between, stretch, column, initial);
       input {
         flex: 1;
-        border: none;
+        border: 1px solid transparent;
         border-radius: 1rem;
         padding: 1.6rem 3.2rem;
         background-color: #f6f7f9;
@@ -267,6 +281,8 @@
   }
 }
 
+
+
 .method {
   @include flex(space-between, center, row, initial);
 
@@ -290,6 +306,7 @@
 .confirmation-label {
   display: block;
   padding: 1.6rem 3.2rem;
+  border: 1px solid transparent;
   border-radius: 1rem;
   background-color: #f6f7f9;
   margin-block: 3.2rem;
@@ -311,6 +328,7 @@
 }
 
 .confirmation-footer {
+  background-color: $white;
   margin-top: 3.2rem;
   padding: 0;
   h3 {
@@ -377,7 +395,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 8px;
     position: relative;
     order: 0;
-
+    border: 1px solid transparent;
     &::after {
       content: "";
       background: url(../images/payment-images/arrow-icon.svg) no-repeat center
@@ -394,7 +412,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .options-container {
   position: absolute;
-  top: 6rem;
+  top: 7rem;
 }
 
 .select-box .options-container.active {
@@ -421,6 +439,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .select-box .option,
 .selected {
   padding: 1.6rem 3.2rem;
+  margin-top: 0.9rem;
   cursor: pointer;
   @include text(1.4rem, 500, $secondinary-light-300, 2.1rem);
 }
