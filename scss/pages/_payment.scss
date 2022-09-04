@@ -247,4 +247,30 @@ p {
   border-radius: 1rem !important;
 }
 
-// Custom select box
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 1rem;
+  height: 1rem;
+  background: url(../images/payment-images/arrow-icon.svg) no-repeat center
+    center;
+}
+
+.date-input.date-placeholder::before {
+  width: 100%;
+  content: attr(placeholder);
+}
+
+.date-input.date-placeholder:hover::before {
+  width: 0%;
+  content: "";
+}
+
+.time-input.time-placeholder::before {
+  width: 100%;
+  content: attr(placeholder);
+}
+
+.time-input.time-placeholder:hover::before {
+  width: 0%;
+  content: "";
+}
