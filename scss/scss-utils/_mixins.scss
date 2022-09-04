@@ -30,6 +30,9 @@
   $activeBackgroundColor,
   $gap
 ) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $backgroundColor;
   font-size: $fontSize;
   padding: $padding;

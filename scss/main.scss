@@ -4,11 +4,17 @@
 @import "./base/reset";
 @import "./base/typography";
 
+@import "./animations/come-from";
+@import "./animations/come-with";
+@import "./animations/car";
+
 @import "./components/buttons";
+@import "./components/car-card";
 
 @import "./layout/footer";
 @import "./layout/header";
 
+@import "./pages/main";
 @import "./pages/details";
 @import "./pages/home";
 @import "./pages/payment";

@@ -1,0 +1,133 @@
+header {
+  width: 100%;
+  padding: 32px 24px 148px 24px;
+  transition: 0.5s;
+
+  @include for-size(laptop) {
+    padding: 40px 32px 40px 60px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    h1 {
+      @include text(3.2rem, 700, $primary-default-500, 4.8rem);
+      animation: come-from-top forwards 1s;
+      text-transform: uppercase;
+      order: 1;
+      @include for-size(laptop) {
+        animation: come-from-left forwards 1s;
+        margin-right: 64px;
+      }
+    }
+
+    .search-input-container {
+      width: calc(100% - 67px);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border: 1px solid rgba(195, 212, 233, 0.4);
+      border-radius: 70px;
+      padding: 12px 0;
+      margin-right: auto;
+      order: 3;
+      margin-top: 32px;
+
+      @include for-size(laptop) {
+        margin-top: 0;
+        width: 30%;
+        order: 2;
+      }
+
+      &:hover {
+        border: 1px solid rgba(195, 212, 233, 1);
+      }
+
+      input {
+        @include text(1.4rem, 500, $secondinary-light-400, 2.1rem);
+        width: calc(100% - 108px);
+        height: 100%;
+        outline: none;
+        border: none;
+      }
+
+      svg:nth-child(3) {
+        display: none;
+        @include for-size(laptop) {
+          display: inline-block;
+        }
+      }
+    }
+
+    > span {
+      display: inline-block;
+      padding: 12px;
+      border: 1px solid rgba(195, 212, 233, 0.4);
+      border-radius: 10px;
+      margin-left: 16px;
+      margin-top: 32px;
+      order: 4;
+
+      @include for-size(laptop) {
+        display: none;
+      }
+    }
+
+    .right-nav-container {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      order: 2;
+      animation: come-from-top forwards 1s;
+
+      @include for-size(laptop) {
+        animation: come-from-right forwards 1s;
+        order: 3;
+      }
+
+      .icon-container {
+        padding: 10px;
+        border: 1px solid rgba(195, 212, 233, 0.4);
+        border-radius: 90px;
+        position: relative;
+        margin-right: 20px;
+        display: none;
+        transition: 0.3s;
+        @include for-size(laptop) {
+          display: block;
+        }
+
+        svg {
+          transform: translateY(1.5px);
+        }
+
+        &:hover {
+          border-color: $primary-dark-600;
+          cursor: pointer;
+          svg path {
+            fill: white;
+            stroke: $primary-dark-600;
+          }
+          #red-dot {
+            background-color: white;
+            border: 1px solid #ff4423;
+          }
+        }
+
+        #red-dot {
+          box-sizing: content-box;
+          position: absolute;
+          top: 1px;
+          right: 1px;
+          border-radius: 50%;
+          display: inline-block;
+          width: 11px;
+          height: 11px;
+          background-color: #ff4423;
+        }
+      }
+    }
+  }
+}
