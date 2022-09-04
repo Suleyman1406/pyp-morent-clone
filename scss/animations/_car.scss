@@ -1,0 +1,23 @@
+@keyframes main-car {
+  0% {
+    transform: translateX(500px) rotate(0deg) translateY(0);
+  }
+  30% {
+    transform: translateX(300px) rotate(0deg) translateY(0);
+  }
+  40% {
+    transform: translateX(300px) rotate(-90deg) translateY(0);
+  }
+  50% {
+    transform: translateX(300px) translateY(40px) rotate(-90deg);
+  }
+  60% {
+    transform: translateX(300px) translateY(40px) rotate(0);
+  }
+  70% {
+    transform: translateX(50px) translateY(40px) rotate(0);
+  }
+  80% {
+    transform: translateX(30px) translateY(40px) rotate(90deg);
+  }
+}

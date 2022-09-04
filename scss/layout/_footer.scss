@@ -1,0 +1,104 @@
+footer {
+  width: 100%;
+  background-color: #f6f7f9;
+
+  padding: 16px 24px 24px;
+
+  @include for-size(laptop) {
+    background-color: $white;
+    padding: 80px 60px 60px;
+  }
+
+  .top-side {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 36px;
+    flex-wrap: wrap;
+
+    .left-side {
+      h1 {
+        @include text(3.2rem, 700, $primary-default-500, 4.8rem);
+        margin-bottom: 16px;
+      }
+      h4 {
+        @include text(1.6rem, 500, #13131399, 2.4rem);
+      }
+    }
+
+    .right-side {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-top: 48px;
+
+      @include for-size(laptop) {
+        margin-top: 0;
+      }
+      > div {
+        h2 {
+          @include text(2rem, 600, $secondinary-default-500, 3rem);
+          margin-bottom: 24px;
+        }
+
+        ul {
+          width: 100%;
+          li {
+            a {
+              @include text(1.6rem, 500, #13131399, 2.4rem);
+              display: inline-block;
+              width: 100%;
+              margin: 15px 0;
+              text-decoration: none;
+              transition: 0.3s;
+
+              &:hover {
+                color: #131313;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-side {
+    display: flex;
+    padding-top: 36px;
+    border-top: 1px solid rgba(19, 19, 19, 0.16);
+    justify-content: flex-end;
+
+    @include for-size(phone) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 32px;
+    }
+
+    h4 {
+      @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
+      margin-right: auto;
+
+      @include for-size(phone) {
+        order: 2;
+      }
+    }
+    a {
+      @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
+      margin-left: 60px;
+      display: inline-block;
+      text-decoration: none;
+      transition: 0.3s;
+
+      @include for-size(phone) {
+        margin: auto;
+        width: 50%;
+        order: 1;
+      }
+
+      &:hover {
+        color: $secondinary-light-400;
+      }
+    }
+  }
+}

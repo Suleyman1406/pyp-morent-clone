@@ -1,0 +1,48 @@
+#main-page {
+  width: 100%;
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 768px;
+    min-height: 100vh;
+    padding: 40px 25px;
+    background-color: #f6f7f9;
+
+    #logo {
+      animation: main-car backwards 7s;
+    }
+    h2 {
+      @include text(4rem, 700, black, 3.84rem);
+      display: inline-block;
+      margin-left: 10px;
+      transform: translateY(-15px);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 25vh;
+      animation: come-with-opacity backwards 3s 7s;
+      h1 {
+        @include text(6.5rem, 700, black, 7.5rem);
+      }
+      h3 {
+        @include text(1.5rem, 700, rgba(15, 15, 15, 0.4), 2.5rem);
+        text-transform: uppercase;
+        margin: 20px;
+      }
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0;
+        gap: 40px;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
