@@ -8,6 +8,7 @@ const recomendationCarsContainer = document.getElementsByClassName(
 );
 const showMoreCarBtn = document.getElementById("show-more-car-btn");
 const filterSwapBtn = document.getElementById("filter-swap-btn");
+const toRentalCarBtns = document.querySelectorAll(".to-rental-car-btn");
 
 let shownCardCount = 8;
 
@@ -18,9 +19,9 @@ popular_cars.forEach((car) => {
   newCard.children[0].textContent = car.name;
   newCard.children[1].textContent = car.type;
   newCard.children[3].children[0].src = car.img;
-  newCard.children[5].children[0].textContent = car.fuel;
-  newCard.children[5].children[1].textContent = car.transmission;
-  newCard.children[5].children[2].textContent = `${car.peopleCount} People`;
+  newCard.children[5].children[0].children[1].textContent = car.fuel;
+  newCard.children[5].children[1].children[1].textContent = car.transmission;
+  newCard.children[5].children[2].children[1].textContent = `${car.peopleCount} People`;
   newCard.children[6].children[0].children[0].children[0].textContent = `$${car.price}/`;
   newCard.children[6].children[0].children[1].textContent = car.oldPrice
     ? `$${car.oldPrice}`
@@ -34,6 +35,7 @@ popular_cars.forEach((car) => {
     () => (window.location.href = `details.html?carId=${car.id}?type=pop`)
   );
   newCard.children[2].addEventListener("click", function (e) {
+    e.stopPropagation();
     let svgStyle = e.target.style;
     e.target.style.fill =
       svgStyle.fill == "rgb(237, 63, 63)" ? "#fff" : "rgb(237, 63, 63)";
@@ -52,9 +54,11 @@ recomendation_cars.slice(0, shownCardCount).forEach((car) => {
   newCard.children[1].textContent = car.type;
   newCard.children[3].children[0].children[0].src = car.img;
 
-  newCard.children[3].children[2].children[0].textContent = car.fuel;
-  newCard.children[3].children[2].children[1].textContent = car.transmission;
-  newCard.children[3].children[2].children[2].textContent = `${car.peopleCount} People`;
+  newCard.children[3].children[2].children[0].children[1].textContent =
+    car.fuel;
+  newCard.children[3].children[2].children[1].children[1].textContent =
+    car.transmission;
+  newCard.children[3].children[2].children[2].children[1].textContent = `${car.peopleCount} People`;
 
   newCard.children[4].children[0].children[0].children[0].textContent = `$${car.price}/`;
   newCard.children[4].children[0].children[1].textContent = car.oldPrice
@@ -65,6 +69,7 @@ recomendation_cars.slice(0, shownCardCount).forEach((car) => {
     window.location.href = `payment.html?carId=${car.id}?type=rec`;
   });
   newCard.children[2].addEventListener("click", function (e) {
+    e.stopPropagation();
     let svgStyle = e.target.style;
     e.target.style.fill =
       svgStyle.fill == "rgb(237, 63, 63)" ? "#fff" : "rgb(237, 63, 63)";
@@ -89,16 +94,17 @@ const showMoreCar = () => {
       newCard.children[1].textContent = car.type;
       newCard.children[3].children[0].children[0].src = car.img;
       newCard.children[2].addEventListener("click", function (e) {
+        e.stopPropagation();
         let svgStyle = e.target.style;
         e.target.style.fill =
           svgStyle.fill == "rgb(237, 63, 63)" ? "#fff" : "rgb(237, 63, 63)";
       });
 
-      newCard.children[3].children[2].children[0].textContent = car.fuel;
-      newCard.children[3].children[2].children[1].textContent =
+      newCard.children[3].children[2].children[0].children[1].textContent =
+        car.fuel;
+      newCard.children[3].children[2].children[1].children[1].textContent =
         car.transmission;
-      newCard.children[3].children[2].children[2].textContent = `${car.peopleCount} People`;
-
+      newCard.children[3].children[2].children[2].children[1].textContent = `${car.peopleCount} People`;
       newCard.children[4].children[0].children[0].children[0].textContent = `$${car.price}/`;
       newCard.children[4].children[0].children[1].textContent = car.oldPrice
         ? `$${car.oldPrice}`
@@ -150,3 +156,10 @@ const swapFilters = () => {
 };
 
 filterSwapBtn.addEventListener("click", swapFilters);
+toRentalCarBtns.forEach((btn) =>
+  btn.addEventListener("click", () =>
+    document.querySelector("#pop-car-section").scrollIntoView({
+      behavior: "smooth",
+    })
+  )
+);
