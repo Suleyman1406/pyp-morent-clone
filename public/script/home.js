@@ -7,6 +7,7 @@ const recomendationCarsContainer = document.getElementsByClassName(
   "recomendation-cars-container"
 );
 const showMoreCarBtn = document.getElementById("show-more-car-btn");
+const filterSwapBtn = document.getElementById("filter-swap-btn");
 
 let shownCardCount = 8;
 
@@ -95,4 +96,19 @@ const showMoreCar = () => {
 
 showMoreCarBtn.addEventListener("click", showMoreCar);
 
-const addToFavoriteIcons = document.querySelectorAll(".add-to-favorite-svg");
+const swapFilters = () => {
+  const pickLocationSelect = document.getElementById("pick-location-select");
+  const pickDateSelect = document.getElementById("pick-date-select");
+  const pickTimeSelect = document.getElementById("pick-time-select");
+  const dropLocationSelect = document.getElementById("drop-location-select");
+  const dropDateSelect = document.getElementById("drop-date-select");
+  const dropTimeSelect = document.getElementById("drop-time-select");
+  console.log(pickLocationSelect.value);
+  console.log(pickDateSelect.value);
+  console.log(pickTimeSelect.value);
+  console.log(dropLocationSelect.value);
+  console.log(dropDateSelect.value);
+  console.log(dropTimeSelect.value);
+};
+
+filterSwapBtn.addEventListener("click", swapFilters);

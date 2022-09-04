@@ -286,17 +286,17 @@
             <h4>Locations</h4>
             <div>
               <label class="select" for="slct">
-                <select id="slct" required="required">
+                <select id="pick-location-select" required="required">
                   <option value="" disabled="disabled" selected="selected">
                     Select your city
                   </option>
-                  <option value="#">Baku</option>
-                  <option value="#">Antalya</option>
-                  <option value="#">Sumqayit</option>
-                  <option value="#">Lenkeran</option>
-                  <option value="#">Bodrum</option>
-                  <option value="#">Gence</option>
-                  <option value="#">Izmir</option>
+                  <option value="Baku">Baku</option>
+                  <option value="Antalya">Antalya</option>
+                  <option value="Sumqayit">Sumqayit</option>
+                  <option value="Lenkeran">Lenkeran</option>
+                  <option value="Bodrum">Bodrum</option>
+                  <option value="Gence">Gence</option>
+                  <option value="Izmir">Izmir</option>
                 </select>
                 <svg>
                   <use xlink:href="#select-arrow-down"></use>
@@ -315,17 +315,17 @@
             <h4>Date</h4>
             <div>
               <label class="select" for="slct">
-                <select id="slct" required="required">
+                <select id="pick-date-select" required="required">
                   <option value="" disabled="disabled" selected="selected">
                     Select your date
                   </option>
-                  <option value="#">2001</option>
-                  <option value="#">2002</option>
-                  <option value="#">2003</option>
-                  <option value="#">2004</option>
-                  <option value="#">2005</option>
-                  <option value="#">2006</option>
-                  <option value="#">2007</option>
+                  <option value="21 July 2023">21 July 2023</option>
+                  <option value="22 July 2023">22 July 2023</option>
+                  <option value="23 July 2023">23 July 2023</option>
+                  <option value="24 July 2023">24 July 2023</option>
+                  <option value="25 July 2023">25 July 2023</option>
+                  <option value="26 July 2023">26 July 2023</option>
+                  <option value="27 July 2023">27 July 2023</option>
                 </select>
                 <svg>
                   <use xlink:href="#select-arrow-down"></use>
@@ -344,16 +344,16 @@
             <h4>Time</h4>
             <div>
               <label class="select" for="slct">
-                <select id="slct" required="required">
+                <select id="pick-time-select" required="required">
                   <option value="" disabled="disabled" selected="selected">
                     Select your time
                   </option>
-                  <option value="#">11</option>
-                  <option value="#">12</option>
-                  <option value="#">13</option>
-                  <option value="#">14</option>
-                  <option value="#">15</option>
-                  <option value="#">16</option>
+                  <option value="01.00">01.00</option>
+                  <option value="02.00">02.00</option>
+                  <option value="03.00">03.00</option>
+                  <option value="04.00">04.00</option>
+                  <option value="05.00">05.00</option>
+                  <option value="06.00">06.00</option>
                 </select>
                 <svg>
                   <use xlink:href="#select-arrow-down"></use>
@@ -369,7 +369,7 @@
           </div>
         </div>
       </div>
-      <button class="btn-primary-icon">
+      <button id="filter-swap-btn" class="btn-primary-icon">
         <svg
           width="20"
           height="18"
@@ -425,24 +425,24 @@
             />
             <circle cx="8" cy="8" r="4" fill="#3563E9" />
           </svg>
-          <span>Pick - Up</span>
+          <span>Drop - Off</span>
         </h4>
         <div class="filter-cols">
           <div class="col">
             <h4>Locations</h4>
             <div>
               <label class="select" for="slct">
-                <select id="slct" required="required">
+                <select id="drop-location-select" required="required">
                   <option value="" disabled="disabled" selected="selected">
                     Select your city
                   </option>
-                  <option value="#">Baku</option>
-                  <option value="#">Antalya</option>
-                  <option value="#">Sumqayit</option>
-                  <option value="#">Lenkeran</option>
-                  <option value="#">Bodrum</option>
-                  <option value="#">Gence</option>
-                  <option value="#">Izmir</option>
+                  <option value="Baku">Baku</option>
+                  <option value="Antalya">Antalya</option>
+                  <option value="Sumqayit">Sumqayit</option>
+                  <option value="Lenkeran">Lenkeran</option>
+                  <option value="Bodrum">Bodrum</option>
+                  <option value="Gence">Gence</option>
+                  <option value="Izmir">Izmir</option>
                 </select>
                 <svg>
                   <use xlink:href="#select-arrow-down"></use>
@@ -461,17 +461,17 @@
             <h4>Date</h4>
             <div>
               <label class="select" for="slct">
-                <select id="slct" required="required">
+                <select id="drop-date-select" required="required">
                   <option value="" disabled="disabled" selected="selected">
                     Select your date
                   </option>
-                  <option value="#">2001</option>
-                  <option value="#">2002</option>
-                  <option value="#">2003</option>
-                  <option value="#">2004</option>
-                  <option value="#">2005</option>
-                  <option value="#">2006</option>
-                  <option value="#">2007</option>
+                  <option value="21 July 2023">21 July 2023</option>
+                  <option value="22 July 2023">22 July 2023</option>
+                  <option value="23 July 2023">23 July 2023</option>
+                  <option value="24 July 2023">24 July 2023</option>
+                  <option value="25 July 2023">25 July 2023</option>
+                  <option value="26 July 2023">26 July 2023</option>
+                  <option value="27 July 2023">27 July 2023</option>
                 </select>
                 <svg>
                   <use xlink:href="#select-arrow-down"></use>
@@ -490,16 +490,16 @@
             <h4>Time</h4>
             <div>
               <label class="select" for="slct">
-                <select id="slct" required="required">
+                <select id="drop-time-select" required="required">
                   <option value="" disabled="disabled" selected="selected">
                     Select your time
                   </option>
-                  <option value="#">11</option>
-                  <option value="#">12</option>
-                  <option value="#">13</option>
-                  <option value="#">14</option>
-                  <option value="#">15</option>
-                  <option value="#">16</option>
+                  <option value="01.00">01.00</option>
+                  <option value="02.00">02.00</option>
+                  <option value="03.00">03.00</option>
+                  <option value="04.00">04.00</option>
+                  <option value="05.00">05.00</option>
+                  <option value="06.00">06.00</option>
                 </select>
                 <svg>
                   <use xlink:href="#select-arrow-down"></use>
