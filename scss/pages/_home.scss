@@ -231,7 +231,9 @@
       margin: -14px auto;
       z-index: 99;
       animation: come-from-bottom forwards 3s;
-
+      svg {
+        transition: 1s all;
+      }
       @include for-size(desktop) {
         margin: auto;
       }
@@ -256,6 +258,7 @@
       width: 100%;
       display: flex;
       gap: 32px;
+      padding-bottom: 5px;
       justify-content: space-between;
       overflow-x: scroll;
       margin-bottom: 42px;

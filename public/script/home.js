@@ -13,6 +13,7 @@ let shownCardCount = 8;
 
 popular_cars.forEach((car) => {
   let newCard = popCarCardTemplate.cloneNode(true);
+
   newCard.className = "car-card";
   newCard.id = `pop-car-card-${car.id}`;
   newCard.children[0].textContent = car.name;
@@ -25,6 +26,14 @@ popular_cars.forEach((car) => {
   newCard.children[6].children[0].children[1].textContent = car.oldPrice
     ? `$${car.oldPrice}`
     : "";
+  newCard.children[6].children[1].addEventListener("click", (e) => {
+    e.stopPropagation();
+    window.location.href = `payment.html?carId=${car.id}?type=pop`;
+  });
+  newCard.addEventListener(
+    "click",
+    () => (window.location.href = `details.html?carId=${car.id}?type=pop`)
+  );
   newCard.children[2].addEventListener("click", function (e) {
     let svgStyle = e.target.style;
     e.target.style.fill =
@@ -35,7 +44,10 @@ popular_cars.forEach((car) => {
 
 recomendation_cars.slice(0, shownCardCount).forEach((car) => {
   let newCard = recomendationCarCardTemplate.cloneNode(true);
-
+  newCard.addEventListener(
+    "click",
+    () => (window.location.href = `details.html?carId=${car.id}?type=rec`)
+  );
   newCard.id = `recomendation-car-card-${car.id}`;
   newCard.children[0].textContent = car.name;
   newCard.children[1].textContent = car.type;
@@ -49,7 +61,10 @@ recomendation_cars.slice(0, shownCardCount).forEach((car) => {
   newCard.children[4].children[0].children[1].textContent = car.oldPrice
     ? `$${car.oldPrice}`
     : "";
-
+  newCard.children[4].children[1].addEventListener("click", (e) => {
+    e.stopPropagation();
+    window.location.href = `payment.html?carId=${car.id}?type=rec`;
+  });
   newCard.children[2].addEventListener("click", function (e) {
     let svgStyle = e.target.style;
     e.target.style.fill =
@@ -66,6 +81,10 @@ const showMoreCar = () => {
     .slice(shownCardCount, shownCardCount + 4)
     .forEach((car) => {
       let newCard = recomendationCarsContainer[0].children[0].cloneNode(true);
+      newCard.addEventListener(
+        "click",
+        () => (window.location.href = `details.html?carId=${car.id}?type=rec`)
+      );
       newCard.id = `recomendation-car-card-${car.id}`;
       newCard.children[0].textContent = car.name;
       newCard.children[1].textContent = car.type;
@@ -85,6 +104,10 @@ const showMoreCar = () => {
       newCard.children[4].children[0].children[1].textContent = car.oldPrice
         ? `$${car.oldPrice}`
         : "";
+      newCard.children[4].children[1].addEventListener("click", (e) => {
+        e.stopPropagation();
+        window.location.href = `payment.html?carId=${car.id}?type=rec`;
+      });
       recomendationCarsContainer[0].appendChild(newCard);
     });
   shownCardCount += 4;
@@ -103,12 +126,28 @@ const swapFilters = () => {
   const dropLocationSelect = document.getElementById("drop-location-select");
   const dropDateSelect = document.getElementById("drop-date-select");
   const dropTimeSelect = document.getElementById("drop-time-select");
-  console.log(pickLocationSelect.value);
-  console.log(pickDateSelect.value);
-  console.log(pickTimeSelect.value);
-  console.log(dropLocationSelect.value);
-  console.log(dropDateSelect.value);
-  console.log(dropTimeSelect.value);
+
+  let temp = pickLocationSelect.value;
+  let temp1 = dropLocationSelect.value;
+  pickLocationSelect.value = temp1;
+  dropLocationSelect.value = temp;
+
+  temp = pickDateSelect.value;
+  temp1 = dropDateSelect.value;
+  pickDateSelect.value = temp1;
+  dropDateSelect.value = temp;
+
+  temp = pickTimeSelect.value;
+  temp1 = dropTimeSelect.value;
+  pickTimeSelect.value = temp1;
+  dropTimeSelect.value = temp;
+
+  if (!filterSwapBtn.children[0].style.transform) {
+    filterSwapBtn.children[0].style.transform = "rotate(180deg)";
+  } else {
+    let deg = +filterSwapBtn.children[0].style.transform.slice(7, -4);
+    filterSwapBtn.children[0].style.transform = `rotate(${deg + 180}deg)`;
+  }
 };
 
 filterSwapBtn.addEventListener("click", swapFilters);
