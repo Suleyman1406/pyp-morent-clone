@@ -281,6 +281,8 @@
   }
 }
 
+
+
 .method {
   @include flex(space-between, center, row, initial);
 
@@ -410,7 +412,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .options-container {
   position: absolute;
-  top: 6rem;
+  top: 7rem;
 }
 
 .select-box .options-container.active {
@@ -437,6 +439,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .select-box .option,
 .selected {
   padding: 1.6rem 3.2rem;
+  margin-top: 0.9rem;
   cursor: pointer;
   @include text(1.4rem, 500, $secondinary-light-300, 2.1rem);
 }

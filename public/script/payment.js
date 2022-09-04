@@ -49,7 +49,7 @@ const marketing = document.querySelector('.marketing');
 
 const visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
 const regex = /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g;
-const cvcRegex = /^[0-9]{3, 4}$/;
+const cvcRegex = /^[0-9]{3,4}$/;
 const dateRegex =
   /^([0-2][0-9]|(3)[0-1])( )(((0)[0-9])|((1)[0-2]))( )\d{4}$/i;
 const onlyLetters = /^[A-Za-z]+$/;
