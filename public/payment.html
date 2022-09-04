@@ -73,7 +73,33 @@
             <div>
               <div class="location">
                 <label class="payment-label">Location</label>
-                <input type="text" placeholder="Select your city">
+                <div class="select-box">
+                  <div class="options-container options-container-first">
+                    <div class="option option-first">
+                      <input type="radio" class="radio" id="Baku" name="category" />
+                      <label for="Baku">Baku</label>
+                    </div>
+                    <div class="option option-first">
+                      <input type="radio" class="radio" id="LA" name="category" />
+                      <label for="LA">Los Angeles</label>
+                    </div>
+                    <div class="option option-first">
+                      <input type="radio" class="radio" id="Istanbul" name="category" />
+                      <label for="istanbul">Istanbul</label>
+                    </div>
+                    <div class="option option-first">
+                      <input type="radio" class="radio" id="London" name="category" />
+                      <label for="london">London</label>
+                    </div>
+                    <div class="option option-first">
+                      <input type="radio" class="radio" id="rio" name="category" />
+                      <label for="rio">RIO</label>
+                    </div>
+                  </div>
+                  <div class="selected selected-first">
+                    Select your city
+                  </div>
+                </div>
               </div>
               <div class="date">
                 <label class="payment-label">Select your date</label>
@@ -99,7 +125,33 @@
             <div>
               <div class="location">
                 <label class="payment-label">Location</label>
-                <input type="text" placeholder="Select your city">
+                <div class="select-box">
+                  <div class="options-container options-container-second">
+                    <div class="option option-second">
+                      <input type="radio" class="radio" id="Baku" name="category" />
+                      <label for="Baku">Baku</label>
+                    </div>
+                    <div class="option option-second">
+                      <input type="radio" class="radio" id="LA" name="category" />
+                      <label for="LA">Los Angeles</label>
+                    </div>
+                    <div class="option option-second">
+                      <input type="radio" class="radio" id="Istanbul" name="category" />
+                      <label for="istanbul">Istanbul</label>
+                    </div>
+                    <div class="option option-second">
+                      <input type="radio" class="radio" id="London" name="category" />
+                      <label for="london">London</label>
+                    </div>
+                    <div class="option option-second">
+                      <input type="radio" class="radio" id="rio" name="category" />
+                      <label for="rio">RIO</label>
+                    </div>
+                  </div>
+                  <div class="selected selected-second">
+                    Select your city
+                  </div>
+                </div>
               </div>
               <div class="date">
                 <label class="payment-label">Select your date</label>
@@ -239,6 +291,38 @@
       </div>
     </section>
   </main>
+
+  <script>
+    const selectedOne = document.querySelector(".selected-first");
+    const optionsContainerOne = document.querySelector(".options-container-first");
+    const optionsListOne = document.querySelectorAll(".option-first");
+
+    const selectedTwo = document.querySelector(".selected-second");
+    const optionsContainerTwo = document.querySelector(".options-container-second");
+    const optionsListTwo = document.querySelectorAll(".option-second");
+
+    selectedOne.addEventListener("click", () => {
+      optionsContainerOne.classList.toggle("active");
+    });
+
+    optionsListOne.forEach(o => {
+      o.addEventListener("click", () => {
+        selectedOne.innerHTML = o.querySelector("label").innerHTML;
+        optionsContainerOne.classList.remove("active");
+      });
+    });
+
+    selectedTwo.addEventListener("click", () => {
+      optionsContainerTwo.classList.toggle("active");
+    });
+
+    optionsListTwo.forEach(o => {
+      o.addEventListener("click", () => {
+        selectedTwo.innerHTML = o.querySelector("label").innerHTML;
+        optionsContainerTwo.classList.remove("active");
+      });
+    });
+  </script>
 </body>
 
 </html>
