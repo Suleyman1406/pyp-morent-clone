@@ -181,20 +181,20 @@
                       <label for="rio">RIO</label>
                     </div>
                   </div>
-                  <div class="selected selected-first">
+                  <div class="selected selected-first pick-up-location">
                     Select your city
                   </div>
                 </div>
               </div>
               <div class="date">
                 <label class="payment-label">Select your date</label>
-                <input type="date" class="date-input date-placeholder" placeholder="Select your date">
+                <input type="date" class="date-input date-placeholder date-pick-up" placeholder="Select your date">
               </div>
             </div>
             <div>
               <div class="time">
                 <label class="payment-label">Time</label>
-                <input type="time" class="time-input time-placeholder" placeholder="Select your time">
+                <input type="time" class="time-input time-placeholder time-pick-up" placeholder="Select your time">
               </div>
             </div>
           </form>
@@ -233,20 +233,20 @@
                       <label for="rio">RIO</label>
                     </div>
                   </div>
-                  <div class="selected selected-second">
+                  <div class="selected selected-second drop-off-location">
                     Select your city
                   </div>
                 </div>
               </div>
               <div class="date">
                 <label class="payment-label">Select your date</label>
-                <input type="date" class="date-input date-placeholder" placeholder="Select your date">
+                <input type="date" class="date-input date-placeholder drop-off-date" placeholder="Select your date">
               </div>
             </div>
             <div>
               <div class="time">
                 <label class="payment-label">Time</label>
-                <input type="time" class="time-input time-placeholder" placeholder="Select your time">
+                <input type="time" class="time-input time-placeholder drop-off-time" placeholder="Select your time">
               </div>
             </div>
           </form>
@@ -266,7 +266,7 @@
         <div class="credit-method">
           <header class="method">
             <label class="payment-label" for="payment-label">
-              <input type="radio" checked id="payment-label">
+              <input type="radio" checked id="payment-label" class="card-radio">
               <span>Credit Card</span>
             </label>
             <img src="./images/payment-images/card.svg" alt="">
@@ -275,21 +275,21 @@
             <div>
               <div class="number">
                 <label class="payment-label">Card Number</label>
-                <input type="text" placeholder="Card Number">
+                <input type="text" placeholder="Card Number" class="card-number">
               </div>
               <div class="exparation">
                 <label class="payment-label">Expration Date</label>
-                <input type="text" placeholder="DD / MM / YY">
+                <input type="text" placeholder="DD / MM / YY" class="card-date">
               </div>
             </div>
             <div>
               <div class="holder">
                 <label class="payment-label">Card holder</label>
-                <input type="text" placeholder="Card holder">
+                <input type="text" placeholder="Card holder" class="card-holder">
               </div>
               <div class="cvc">
                 <label class="payment-label">CVC</label>
-                <input type="text" placeholder="CVC">
+                <input type="text" placeholder="CVC" class="card-cvc">
               </div>
             </div>
           </form>
@@ -321,12 +321,12 @@
         </header>
 
         <label class="confirmation-label">
-          <input type="checkbox">
+          <input type="checkbox" class="marketing">
           <span>I agree with sending an Marketing and newsletter emails. No spam, promissed!</span>
         </label>
 
         <label class="confirmation-label">
-          <input type="checkbox">
+          <input type="checkbox" class="terms">
           <span>I agree with our terms and conditions and privacy policy.</span>
         </label>
         <button class="btn-primary-label confirmation-btn">Rent Now</button>
@@ -457,28 +457,84 @@
     const addressInput = document.querySelector('.address-input');
     const cityInput = document.querySelector('.city-input');
     const numberInput = document.querySelector('.phone-input');
+    const pickUpLocation = document.querySelector('.pick-up-location');
+    const datePickUp = document.querySelector(".date-pick-up");
+    const timePickUp = document.querySelector(".time-pick-up");
+    const dropOffLocation = document.querySelector('.drop-off-location');
+    const datedropOff = document.querySelector(".drop-off-date");
+    const timedropOff = document.querySelector(".drop-off-time");
+    const cardRadio = document.querySelector('.card-radio');
+    const cardNumber = document.querySelector('.card-number')
+    const cardDate = document.querySelector('.card-date')
+    const cardCVC = document.querySelector('.card-cvc')
+    const cardHolder = document.querySelector('.card-holder');
+    const terms = document.querySelector('.terms');
+    const marketing = document.querySelector('.marketing');
 
-    const regex = /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g
+    const visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
+    const regex = /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g;
+    const cvcRegex = /^[0-9]{3, 4}$/;
+    const dateRegex =
+      /^([0-2][0-9]|(3)[0-1])( )(((0)[0-9])|((1)[0-2]))( )\d{4}$/i;
+    const onlyLetters = /^[A-Za-z]+$/;
 
     sumbitBtn.addEventListener('click', () => {
       if (!nameInput.value) {
-        nameInput.classList.add('payment-error');
-        setTimeout(() => { nameInput.classList.remove('payment-error'); }, 4000)
+        handleError(nameInput)
       }
       if (!addressInput.value) {
-        addressInput.classList.add('payment-error');
-        setTimeout(() => { addressInput.classList.remove('payment-error'); }, 4000)
+        handleError(addressInput)
       }
       if (!cityInput.value) {
-        cityInput.classList.add('payment-error');
-        setTimeout(() => { cityInput.classList.remove('payment-error'); }, 4000)
+        handleError(cityInput)
       }
-      console.log(regex.test(numberInput.value))
       if (!regex.test(numberInput.value) || !numberInput.value) {
-        numberInput.classList.add('payment-error');
-        setTimeout(() => { numberInput.classList.remove('payment-error'); }, 4000)
+        handleError(numberInput)
+      }
+      if (pickUpLocation.textContent.trim() === "Select your city") {
+        handleError(pickUpLocation)
+      }
+      if (!datePickUp.value) {
+        handleError(datePickUp)
+      }
+      if (!timePickUp.value) {
+        handleError(timePickUp)
+      }
+      if (dropOffLocation.textContent.trim() === "Select your city") {
+        handleError(dropOffLocation)
+      }
+      if (!datedropOff.value) {
+        handleError(datedropOff)
+      }
+      if (!timedropOff.value) {
+        handleError(timedropOff)
+      }
+      if (cardRadio.checked) {
+        if (!visaRegex.test(cardNumber.value)) {
+          handleError(cardNumber);
+        }
+        if (!dateRegex.test(cardDate.value)) {
+          handleError(cardDate);
+        }
+        if (!cvcRegex.test(cardCVC.value)) {
+          handleError(cardCVC);
+        }
+        if (!onlyLetters.test(cardHolder.value)) {
+          handleError(cardHolder)
+        }
+      }
+      if (!terms.checked) {
+        handleError(terms.parentElement);
+      }
+      if (!marketing.checked) {
+        handleError(marketing.parentElement)
       }
     });
+
+    function handleError(input) {
+      input.classList.add('payment-error');
+      setTimeout(() => { input.classList.remove('payment-error') }, 4000)
+    }
   </script>
 </body>
 

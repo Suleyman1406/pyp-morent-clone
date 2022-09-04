@@ -6,7 +6,9 @@
   gap: $gap;
 }
 
-.payment-error {
+.payment-error,
+.selected.payment-error,
+.confirmation-label.payment-error {
   border: 1px solid $error-default-500 !important;
 }
 
@@ -85,8 +87,8 @@
   order: 2;
   @include for-size(laptop) {
     order: 1;
+    overflow-y: scroll;
   }
-  overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -302,6 +304,7 @@
 .confirmation-label {
   display: block;
   padding: 1.6rem 3.2rem;
+  border: 1px solid transparent;
   border-radius: 1rem;
   background-color: #f6f7f9;
   margin-block: 3.2rem;
@@ -389,7 +392,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 8px;
     position: relative;
     order: 0;
-
+    border: 1px solid transparent;
     &::after {
       content: "";
       background: url(../images/payment-images/arrow-icon.svg) no-repeat center
