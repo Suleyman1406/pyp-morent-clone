@@ -113,8 +113,8 @@ function handleError(input) {
 }
 
 // Display Data
-// const url = window.location.search;
-const url = "127.0.0.1:5000/public/payment.html?carId=2?type=rec";
+const url = window.location.search;
+// const url = "127.0.0.1:5000/public/payment.html?carId=2?type=rec";
 const totalPrice = document.querySelector('.total-price-data');
 const subTotal = document.querySelector('.sub-price-data');
 const carName = document.querySelector('.main-car-name');
