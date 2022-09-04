@@ -8,15 +8,8 @@
 
 .payment-main-header {
   background: $white;
-  padding: 2rem 6rem !important;
-  position: fixed;
+  padding-bottom: 2rem;
   z-index: 9;
-  box-shadow: 0px 6px 62px -56px rgba(0, 0, 0, 0.75);
-
-  @include for-size(laptop) {
-    position: static;
-    box-shadow: none;
-  }
 }
 
 #payment-body {
@@ -38,7 +31,6 @@
 // ! Billing info section
 .payment-container {
   position: relative;
-  top: 17.3rem;
   padding: 3.2rem;
 
   @include for-size(laptop) {
