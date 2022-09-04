@@ -111,3 +111,5 @@ function handleError(input) {
   input.classList.add('payment-error');
   setTimeout(() => { input.classList.remove('payment-error') }, 4000)
 }
+
+console.log(window.location.href);
