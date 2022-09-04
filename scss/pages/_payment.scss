@@ -29,25 +29,27 @@
 
 .payment-label {
   display: block;
-  margin-block: 2.4rem;
+  margin-top: 2.4rem;
   @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
 }
 
-.payment-details {
-  background-color: $white;
-  border-radius: 1rem;
-  padding: 2.4rem;
+.payment {
   flex: 2;
 }
 
-.user-info {
+.payment-details {
+  border-radius: 1rem;
+  padding: 2.4rem;
+  background-color: $white;
+}
+
+.form-info {
   > div {
     @include flex(space-between, center, row, 3.2rem);
 
     > div {
       flex: 1;
       @include flex(space-between, stretch, column, initial);
-
       input {
         flex: 1;
         border: none;
@@ -63,6 +65,10 @@
         }
       }
     }
+  }
+
+  label {
+    margin-bottom: 2.4rem;
   }
 }
 
@@ -157,3 +163,88 @@ p {
     @include text(3.2rem, 700, $secondinary-default-500, 4rem);
   }
 }
+
+.rental-info {
+  padding: 2.4rem;
+  margin-block: 3.2rem;
+  background-color: $white;
+  border-radius: 1rem;
+}
+
+.select-info {
+  > :last-child {
+    width: 48.2%;
+  }
+}
+
+.payment-method {
+  padding: 2.4rem;
+  margin-block: 3.2rem;
+  background-color: $white;
+  border-radius: 1rem;
+
+  > div {
+    background-color: #f6f7f9;
+    padding: 2.4rem;
+    border-radius: 1rem;
+
+    input {
+      background-color: $white !important;
+    }
+  }
+
+  > :nth-child(2n) {
+    margin-block: 2.4rem;
+  }
+}
+
+.method {
+  @include flex(space-between, center, row, initial);
+
+  input {
+    transform: scale(1.4);
+  }
+
+  label {
+    margin-block: auto;
+  }
+}
+
+// ! Confirmation section
+.confirmation {
+  padding: 2.4rem;
+  margin-block: 3.2rem;
+  background-color: $white;
+  border-radius: 1rem;
+}
+
+.confirmation-label {
+  display: block;
+  padding: 1.6rem 3.2rem;
+  border-radius: 1rem;
+  background-color: #f6f7f9;
+  margin-block: 3.2rem;
+  @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
+
+  span {
+    padding-left: 2.2rem;
+  }
+
+  input {
+    transform: scale(1.4);
+  }
+}
+
+.confirmation-footer {
+  margin-top: 3.2rem;
+  h3 {
+    @include text(1.6rem, 600, $secondinary-default-500, 2.4rem);
+    margin-top: 2rem;
+  }
+}
+
+.confirmation-btn {
+  border-radius: 1rem !important;
+}
+
+// Custom select box
