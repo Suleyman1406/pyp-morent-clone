@@ -33,9 +33,18 @@ $details-background-color: #f6f7f9;
     height: inherit;
     display: flex;
     margin: auto;
+    .details{
+      @include for-size(phone){
+        padding: 2.4rem;
+      }
+      @include for-size(tablet){
+        padding: 3.2rem;
+      }
+
+    }
     nav {
       position: relative;
-
+      background-color: $white;
       @include for-size(phone) {
         display: none;
         width: 35%;
@@ -47,16 +56,21 @@ $details-background-color: #f6f7f9;
         width: 35%;
         padding-left: 1rem;
       }
+      @include for-size(laptop){
+        display: none;
+      }
 
-      @include for-size(laptop) {
+      @include for-size(desktop) {
         display: block;
         padding-left: 3.2rem;
+        width: 25%;
+
+
       }
 
       padding-top: 3.2rem;
-      width: 25%;
       height: auto;
-      background: $white;
+      // background: $white;
       border-right: 1px solid #f3f5f7;
 
       .fa-remove {
@@ -148,6 +162,19 @@ $details-background-color: #f6f7f9;
 
     main {
       position: relative;
+      @include for-size(phone){
+        width:100%;
+        // padding: 2.4rem;
+        // padding: 32px 32px 0 32px;
+      }
+      @include for-size(tablet){
+        width:100%;
+        // padding: 32px 32px 0 32px;
+      }
+      @include for-size(desktop){
+        width:75%;
+        padding: 32px 32px 0 32px;
+      }
       .fa-bars {
         font-size: 30px;
         margin-top: 20px;
@@ -161,23 +188,13 @@ $details-background-color: #f6f7f9;
         }
 
         @include for-size(laptop) {
-          display: NONE;
+          display: none;
+                padding: 3.2rem 3.2rem 0 3.2rem;
+
         }
       }
-
-      @include for-size(phone) {
-        width: 100%;
-        padding: 3.2rem 2.4rem 0 2.4rem;
-      }
-
-      @include for-size(tablet) {
-        width: 100%;
-        padding: 3.2rem 2.4rem 0 2.4rem;
-      }
-
       height: auto;
       background: $details-background-color;
-      padding: 3.2rem 3.2rem 0 3.2rem;
 
       .cards {
         @include for-size(phone) {
@@ -189,67 +206,103 @@ $details-background-color: #f6f7f9;
           display: flex;
           flex-direction: column;
         }
-
-        @include for-size(laptop) {
+        @include for-size(desktop) {
           display: flex;
           flex-direction: row;
         }
-
-        .left {
-          .row1 img {
-            @include for-size(phone) {
-              width: 100%;
-            }
-
-            @include for-size(tablet) {
-              width: 100%;
-            }
-
-            @include for-size(laptop) {
-              width: auto;
-            }
+        .main img{
+          background: #3563e9;
+          ;
+          @include for-size(tablet){
+            width: 100%;
+            // margin: 3.2rem;
           }
-
-          .left_image_collaj {
-            @include for-size(phone) {
-              margin-top: 0;
-            }
-
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2.4rem;
-
-            .img {
-              @include for-size(phone) {
-                width: 30%;
-                height: 12.4rem;
-              }
-
-              @include for-size(tablet) {
-                width: 30%;
-                height: 12.4rem;
-              }
-            }
-
-            .car1 {
-              width: 14.8rem;
-              height: 12.4rem;
-            }
+          @include for-size(phone){
+            width: 100%;
+            // margin: 3.2rem;
           }
         }
+.main img{
+  border-radius: 10px;
 
+}
+        .image-box {
+          margin-top: 26px;
+          display: flex;
+          justify-content: space-between;
+          :first-child{
+            border: 2px solid #3563E9;
+            padding:8px;
+            border-radius: 10px;
+            background-image: url('../../public/images/details/Rectangle\ 23781.svg');
+         background-color: #3563E9;
+          }
+          img{
+            width: 30%;
+            // height: 100px;
+          }
+
+          
+          // div{
+          //   // max-width: 148px;
+          //   width: 30%;
+          //   // height: 124px;
+          //   border: 0;
+          //   img{
+          //   @include for-size(phone){
+          //     width:20%
+          //   }}
+
+          // }
+          div.main_image img{
+            @include for-size(phone){
+              width:100%;
+              // height: 124px;
+
+            }
+           
+         
+        
+
+          }
+          // img {
+          //   @include for-size(phone){
+          //     margin: 2.4rem;
+          //   }
+          //   height:100%;
+          //         max-width: 100%;
+          //   border-radius: 10px;
+          //   cursor: pointer;
+          // }
+          @include for-size(desktop){
+            div{
+              max-width: 148px;
+            height: 124px;
+   
+            }
+            
+              img{
+                height:100%;
+                  max-width: 100%;
+                  cursor: pointer;
+              }
+          }}
         .right {
           @include for-size(phone) {
             margin-left: 0;
-            padding: 1.6rem;
+            width: 100%;
           }
 
           @include for-size(tablet) {
             margin-left: 0;
+            width: 100%;
+          }
+          @include for-size(desktop){
+            margin-left: 24px;
           }
 
           position: relative;
-          width: 100%;
+          width: 50%;
           height: auto;
           background-color: $white;
           margin-left: 3.2rem;
@@ -311,32 +364,60 @@ $details-background-color: #f6f7f9;
                 letter-spacing: -0.02em;
                 margin-top: 3.6rem;
               }
+              @include for-size(desktop){
+margin-bottom: 3.2rem
+              }
 
               @include text(2rem, 400, $secondinary-light-400, 200%);
             }
           }
+          h2
 
           .text-table {
             @include for-size(phone) {
               margin-top: 1.6rem;
+             
+              
             }
-
-            margin-top: 3.2rem;
-
-            .row {
-              display: flex;
-              justify-content: space-between;
-
-              h2 {
-                @include for-size(phone) {
-                  font-size: 1.2rem;
-                  line-height: 1.5rem;
-                }
-
-                @include text(2rem, 600, $secondinary-light-400, 150%);
-                margin-bottom: 1.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            div {
+              @include for-size(phone){
+                font-size: 1rem
               }
+              @include text(2rem, 600, $secondinary-light-400 , 150%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              letter-spacing: -0.02em;
+              width: 100%;
+              :nth-child(2){
+                margin-right: 42px;
+                color: $secondinary-light-300;
+                font-weight: 400;
             }
+             
+              div:nth-child(even) {
+                font-weight: 600;
+                text-align: right;
+                color: #596780;
+                justify-content: end;
+            }
+              @include for-size(desktop){
+                &:nth-child(2){
+                    margin-right: 24px;
+                }
+              }
+             }
+            
+            @include for-size(desktop){
+                div{
+                    font-size: 2rem;
+                }
+              }
+            
           }
 
           .right_footer {
@@ -349,7 +430,7 @@ $details-background-color: #f6f7f9;
             margin-top: 6.8rem;
 
             .right_footer_left {
-              flex-direction: column;
+              flex-direction: column
             }
 
             h2 {
@@ -357,10 +438,13 @@ $details-background-color: #f6f7f9;
                 line-height: 2.5rem;
                 font-size: 2rem;
               }
-
+          
               display: inline;
+              margin-bottom: 1rem;
               @include text(2.8rem, 700, $secondinary-default-500, 3.5rem);
             }
+
+             
 
             .right_footer_h {
               @include text(1.6rem, 700, $secondinary-light-300, 2rem);
@@ -371,17 +455,25 @@ $details-background-color: #f6f7f9;
             }
           }
         }
+      
       }
-
+      .select-img{
+        border: 2px solid #3563E9;
+        padding:8px;
+        border-radius: 10px;
+      }
       //reviews
       .reviews {
         @include for-size(phone) {
-          padding: 1.6rem 1.6rem 2.6rem 1.6rem;
+          width: 100%;
+// margin: 2.4rem;
         }
 
         @include for-size(tablet) {
-          padding: 2.4rem 2.4rem 3.4rem 2.4rem;
+
+          margin: 3;
         }
+        padding: 2.4rem 2.4rem 3.4rem 2.4rem;
 
         margin-top: 3.2rem;
         background-color: $white;
@@ -415,6 +507,7 @@ $details-background-color: #f6f7f9;
         .comments {
           @include for-size(phone) {
             margin-top: 2.4rem;
+            width: 100%;
           }
 
           margin-top: 3rem;
@@ -539,5 +632,59 @@ $details-background-color: #f6f7f9;
         }
       }
     }
+  }
+  .cards .left{
+    @include for-size(phone){
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  .select-img{
+    border: 2px solid #3563E9;
+    padding:8px;
+    border-radius: 10px;
+  }
+  .text-table {
+    margin-top: 1.6rem;
+
+    @include for-size(phone) {
+      
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    div {
+      @include text(2rem, 600, $secondinary-light-400 , 150%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: -0.02em;
+      width: 100%;
+      :nth-child(2){
+        margin-right: 42px;
+        color: $secondinary-light-300;
+        font-weight: 400;
+    }
+     
+      div:nth-child(even) {
+        font-weight: 600;
+        text-align: right;
+        color: #596780;
+        justify-content: end;
+    }
+      @include for-size(desktop){
+        &:nth-child(2){
+            margin-right: 24px;
+        }
+      }
+     }
+    
+    @include for-size(desktop){
+        div{
+            font-size: 2rem;
+        }
+      }
+    
   }
 }
