@@ -15,7 +15,7 @@
 </head>
 
 <body id="payment-body">
-  <header class="payment-main-header">
+  <header id="top-navbar" class="payment-main-header">
     <nav>
       <h1 id="pot">Morent</h1>
       <div class="search-input-container">
@@ -117,21 +117,21 @@
           <div>
             <div class="name">
               <label class="payment-label">Name</label>
-              <input type="text" placeholder="Your name">
+              <input type="text" placeholder="Your name" class="name-input">
             </div>
             <div class="address">
               <label class="payment-label">Address</label>
-              <input type="text" placeholder="Address">
+              <input type="text" placeholder="Address" class="address-input">
             </div>
           </div>
           <div>
             <div class="phone">
               <label class="payment-label">Phone Number</label>
-              <input type="text" placeholder="Phone number">
+              <input type="text" placeholder="Phone number" class="phone-input">
             </div>
             <div class="town">
               <label for="" class="payment-label">Town / City</label>
-              <input type="text" placeholder="Town or city">
+              <input type="text" placeholder="Town or city" class="city-input">
             </div>
           </div>
         </form>
@@ -181,20 +181,20 @@
                       <label for="rio">RIO</label>
                     </div>
                   </div>
-                  <div class="selected selected-first">
+                  <div class="selected selected-first pick-up-location">
                     Select your city
                   </div>
                 </div>
               </div>
               <div class="date">
                 <label class="payment-label">Select your date</label>
-                <input type="date" class="date-input date-placeholder" placeholder="Select your date">
+                <input type="date" class="date-input date-placeholder date-pick-up" placeholder="Select your date">
               </div>
             </div>
             <div>
               <div class="time">
                 <label class="payment-label">Time</label>
-                <input type="time" class="time-input time-placeholder" placeholder="Select your time">
+                <input type="time" class="time-input time-placeholder time-pick-up" placeholder="Select your time">
               </div>
             </div>
           </form>
@@ -233,20 +233,20 @@
                       <label for="rio">RIO</label>
                     </div>
                   </div>
-                  <div class="selected selected-second">
+                  <div class="selected selected-second drop-off-location">
                     Select your city
                   </div>
                 </div>
               </div>
               <div class="date">
                 <label class="payment-label">Select your date</label>
-                <input type="date" class="date-input date-placeholder" placeholder="Select your date">
+                <input type="date" class="date-input date-placeholder drop-off-date" placeholder="Select your date">
               </div>
             </div>
             <div>
               <div class="time">
                 <label class="payment-label">Time</label>
-                <input type="time" class="time-input time-placeholder" placeholder="Select your time">
+                <input type="time" class="time-input time-placeholder drop-off-time" placeholder="Select your time">
               </div>
             </div>
           </form>
@@ -266,7 +266,7 @@
         <div class="credit-method">
           <header class="method">
             <label class="payment-label" for="payment-label">
-              <input type="radio" checked id="payment-label">
+              <input type="radio" checked id="payment-label" class="card-radio"  name="pay">
               <span>Credit Card</span>
             </label>
             <img src="./images/payment-images/card.svg" alt="">
@@ -275,35 +275,35 @@
             <div>
               <div class="number">
                 <label class="payment-label">Card Number</label>
-                <input type="text" placeholder="Card Number">
+                <input type="text" placeholder="Card Number" class="card-number">
               </div>
               <div class="exparation">
                 <label class="payment-label">Expration Date</label>
-                <input type="text" placeholder="DD / MM / YY">
+                <input type="text" placeholder="DD / MM / YY" class="card-date">
               </div>
             </div>
             <div>
               <div class="holder">
                 <label class="payment-label">Card holder</label>
-                <input type="text" placeholder="Card holder">
+                <input type="text" placeholder="Card holder" class="card-holder">
               </div>
               <div class="cvc">
                 <label class="payment-label">CVC</label>
-                <input type="text" placeholder="CVC">
+                <input type="text" placeholder="CVC" class="card-cvc">
               </div>
             </div>
           </form>
         </div>
         <div class="method">
           <label class="payment-label" for="paypal">
-            <input type="radio" id="paypal">
+            <input type="radio" id="paypal"  name="pay">
             <span>PayPal</span>
           </label>
           <img src="./images/payment-images/paypal.svg" alt="paypal">
         </div>
         <div class="method">
           <label class="payment-label" for="bitcoin">
-            <input type="radio" id="bitcoin">
+            <input type="radio" id="bitcoin" name="pay">
             <span>Bitcoin</span>
           </label>
           <img src="./images/payment-images/bitcoin.svg" alt="bitcoin">
@@ -321,12 +321,12 @@
         </header>
 
         <label class="confirmation-label">
-          <input type="checkbox">
+          <input type="checkbox" class="marketing">
           <span>I agree with sending an Marketing and newsletter emails. No spam, promissed!</span>
         </label>
 
         <label class="confirmation-label">
-          <input type="checkbox">
+          <input type="checkbox" class="terms">
           <span>I agree with our terms and conditions and privacy policy.</span>
         </label>
         <button class="btn-primary-label confirmation-btn">Rent Now</button>
@@ -343,10 +343,10 @@
       <p>Prices may change depending on the length of the rental and the price of your rental car.</p>
       <div class="car">
         <div class="rental-car-img">
-          <img src="./images/payment-images/car.svg" alt="nissan gt-r">
+          <img src="./images/payment-images/car.svg" alt="nissan gt-r" class="main-car-img">
         </div>
         <div class="rental-car-info">
-          <h1>Nissan GT - R</h1>
+          <h1 class="main-car-name">Nissan GT - R</h1>
           <div>
             <img src="./images/payment-images/stars.svg" alt="stars">
             <p>440+ Reviewer</p>
@@ -356,7 +356,7 @@
       <div class="total-price">
         <div>
           <p>Subtotal</p>
-          <span>$80.00</span>
+          <span class="sub-price-data">$80.00</span>
         </div>
         <div>
           <p>Tax</p>
@@ -372,7 +372,7 @@
           <h2>Total Rental Price</h2>
           <p>Overall price and includes rental discount</p>
         </div>
-        <h1>$80.00</h1>
+        <h1 class="total-price-data">$80.00</h1>
       </div>
     </section>
   </main>
@@ -421,37 +421,8 @@
       <a href="#">Terms & Condition</a>
     </div>
   </footer>
-  <script>
-    const selectedOne = document.querySelector(".selected-first");
-    const optionsContainerOne = document.querySelector(".options-container-first");
-    const optionsListOne = document.querySelectorAll(".option-first");
-
-    const selectedTwo = document.querySelector(".selected-second");
-    const optionsContainerTwo = document.querySelector(".options-container-second");
-    const optionsListTwo = document.querySelectorAll(".option-second");
-
-    selectedOne.addEventListener("click", () => {
-      optionsContainerOne.classList.toggle("active");
-    });
-
-    optionsListOne.forEach(o => {
-      o.addEventListener("click", () => {
-        selectedOne.innerHTML = o.querySelector("label").innerHTML;
-        optionsContainerOne.classList.remove("active");
-      });
-    });
-
-    selectedTwo.addEventListener("click", () => {
-      optionsContainerTwo.classList.toggle("active");
-    });
-
-    optionsListTwo.forEach(o => {
-      o.addEventListener("click", () => {
-        selectedTwo.innerHTML = o.querySelector("label").innerHTML;
-        optionsContainerTwo.classList.remove("active");
-      });
-    });
-  </script>
+  <script src="./fake-database/cars.js"></script>
+  <script src="./script/payment.js"></script>
 </body>
 
 </html>
