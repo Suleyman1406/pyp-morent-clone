@@ -326,22 +326,23 @@
 
         <div class="price">
           <p class="header-p">P R I C E</p>
-          <img src="./image-details/Line2 (1).svg" alt="" />
+          <img src="./images/details/Line2 (1).svg" alt="" />
           <p>Max. $100.00</p>
         </div>
       </nav>
 
       <!------Main-Cards------>
       <main>
+        <div class="details">
         <div class="cards">
           <div class="left">
-            <div class="row1">
-              <img src="./image-details/View.svg" alt="" />
+            <div class="main">
+              <img src="./images/details/View.svg" alt="">
             </div>
-            <div class="left_image_collaj">
-              <img class="img car-1" src="./image-details/View.svg" alt="" />
-              <img class="img" src="./image-details/View 2.svg" alt="" />
-              <img class="img" src="./image-details/View 3.svg" alt="" />
+            <div class="image-box">
+            <img src="./images/details/CarSliderArrow&&Carbg.png"/>
+            <img src="./images/details/View 2.svg"  />
+              <img src="./images/details/View 3.svg"  />
             </div>
           </div>
           <div class="right">
@@ -442,24 +443,16 @@
             </div>
 
             <div class="text-table">
-              <div class="row">
-                <div class="col">
-                  <h2>Type Car</h2>
-                  <h2>Steering</h2>
-                </div>
-                <div class="col">
-                  <h2>Sport</h2>
-                  <h2>Manual</h2>
-                </div>
-                <div class="col">
-                  <h2>Capacity</h2>
-                  <h2>Gasoline</h2>
-                </div>
-                <div class="col">
-                  <h2>2 Person</h2>
-                  <h2>70L</h2>
-                </div>
-              </div>
+              <div>Type Car</div>
+              <div>Sport</div>
+              <div>Capacity</div>
+              <div>2 Person</div>
+            </div>
+            <div class="text-table"">
+              <div>Steering</div>
+              <div>Manual</div>
+              <div>Gasoline</div>
+              <div>70L</div>
             </div>
 
             <div class="right_footer">
@@ -562,7 +555,7 @@
                   </svg>
                 </div>
               </div>
-              <img src="./image-details/Profill.svg" alt="" />
+              <img src="./images/details/Profill.svg" alt="" />
               <div class="user-data">
                 <h2>Alex Stanton</h2>
                 <h4>CEO at Bukalapak</h4>
@@ -654,7 +647,7 @@
                   </svg>
                 </div>
               </div>
-              <img src="./image-details/Profill (1).svg" alt="" />
+              <img src="./images/details/Profill (1).svg" alt="" />
               <div class="user-data">
                 <h2>Skylar Dias</h2>
                 <h4>CEO at Amazon</h4>
@@ -685,6 +678,7 @@
               />
             </svg>
           </div>
+        </div>
         </div>
 
         <div class="car-cards">
@@ -1874,24 +1868,6 @@
       </div>
     </footer>
   </body>
-  <script>
-    let main = document.querySelector("main");
-    let navbar = document.querySelector("nav");
-    let cancel_button = document.querySelector(".fa-remove");
-    let asidediv = document.querySelector(".asidediv");
-    function shownavbar() {
-      main.style.zIndex = -2;
-      navbar.style.zIndex = 2;
-      navbar.style.display = "block";
-      navbar.style.position = "absolute";
-      asidediv.style.display = "block";
-      cancel_button.style.display = "block";
-    }
-    function removenavbar() {
-      asidediv.style.display = "none";
-      navbar.style.display = "none";
-      main.style.zIndex = 0;
-      navbar.style.zIndex = 0;
-    }
-  </script>
+
+  <script src="./script/details.js"></script>
 </html>
