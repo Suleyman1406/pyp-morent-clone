@@ -10,7 +10,7 @@ selectedOne.addEventListener("click", () => {
   optionsContainerOne.classList.toggle("active");
 });
 
-optionsListOne.forEach(o => {
+optionsListOne.forEach((o) => {
   o.addEventListener("click", () => {
     selectedOne.innerHTML = o.querySelector("label").innerHTML;
     optionsContainerOne.classList.remove("active");
@@ -21,69 +21,69 @@ selectedTwo.addEventListener("click", () => {
   optionsContainerTwo.classList.toggle("active");
 });
 
-optionsListTwo.forEach(o => {
+optionsListTwo.forEach((o) => {
   o.addEventListener("click", () => {
     selectedTwo.innerHTML = o.querySelector("label").innerHTML;
     optionsContainerTwo.classList.remove("active");
   });
 });
 
-const sumbitBtn = document.querySelector('.confirmation-btn');
+const sumbitBtn = document.querySelector(".confirmation-btn");
 const nameInput = document.querySelector(".name-input");
-const addressInput = document.querySelector('.address-input');
-const cityInput = document.querySelector('.city-input');
-const numberInput = document.querySelector('.phone-input');
-const pickUpLocation = document.querySelector('.pick-up-location');
+const addressInput = document.querySelector(".address-input");
+const cityInput = document.querySelector(".city-input");
+const numberInput = document.querySelector(".phone-input");
+const pickUpLocation = document.querySelector(".pick-up-location");
 const datePickUp = document.querySelector(".date-pick-up");
 const timePickUp = document.querySelector(".time-pick-up");
-const dropOffLocation = document.querySelector('.drop-off-location');
+const dropOffLocation = document.querySelector(".drop-off-location");
 const datedropOff = document.querySelector(".drop-off-date");
 const timedropOff = document.querySelector(".drop-off-time");
-const cardRadio = document.querySelector('.card-radio');
-const cardNumber = document.querySelector('.card-number')
-const cardDate = document.querySelector('.card-date')
-const cardCVC = document.querySelector('.card-cvc')
-const cardHolder = document.querySelector('.card-holder');
-const terms = document.querySelector('.terms');
-const marketing = document.querySelector('.marketing');
+const cardRadio = document.querySelector(".card-radio");
+const cardNumber = document.querySelector(".card-number");
+const cardDate = document.querySelector(".card-date");
+const cardCVC = document.querySelector(".card-cvc");
+const cardHolder = document.querySelector(".card-holder");
+const terms = document.querySelector(".terms");
+const marketing = document.querySelector(".marketing");
 
 const visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
-const regex = /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g;
+const regex =
+  /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g;
 const cvcRegex = /^[0-9]{3,4}$/;
-const dateRegex =
-  /^([0-2][0-9]|(3)[0-1])( )(((0)[0-9])|((1)[0-2]))( )\d{4}$/i;
+const dateRegex = /^([0-2][0-9]|(3)[0-1])( )(((0)[0-9])|((1)[0-2]))( )\d{4}$/i;
 const onlyLetters = /^[A-Za-z]+$/;
 
-sumbitBtn.addEventListener('click', () => {
+sumbitBtn.addEventListener("click", () => {
   if (!nameInput.value) {
-    handleError(nameInput)
+    handleError(nameInput);
   }
   if (!addressInput.value) {
-    handleError(addressInput)
+    handleError(addressInput);
   }
   if (!cityInput.value) {
-    handleError(cityInput)
+    handleError(cityInput);
   }
   if (!regex.test(numberInput.value) || !numberInput.value) {
-    handleError(numberInput)
+    handleError(numberInput);
   }
   if (pickUpLocation.textContent.trim() === "Select your city") {
-    handleError(pickUpLocation)
+    handleError(pickUpLocation);
   }
   if (!datePickUp.value) {
-    handleError(datePickUp)
+    handleError(datePickUp);
   }
   if (!timePickUp.value) {
-    handleError(timePickUp)
+    handleError(timePickUp);
   }
   if (dropOffLocation.textContent.trim() === "Select your city") {
-    handleError(dropOffLocation)
+    handleError(dropOffLocation);
   }
   if (!datedropOff.value) {
-    handleError(datedropOff)
+    handleError(datedropOff);
   }
   if (!timedropOff.value) {
-    handleError(timedropOff)
+    handleError(timedropOff);
   }
   if (cardRadio.checked) {
     if (!visaRegex.test(cardNumber.value)) {
@@ -96,29 +96,31 @@ sumbitBtn.addEventListener('click', () => {
       handleError(cardCVC);
     }
     if (!onlyLetters.test(cardHolder.value)) {
-      handleError(cardHolder)
+      handleError(cardHolder);
     }
   }
   if (!terms.checked) {
     handleError(terms.parentElement);
   }
   if (!marketing.checked) {
-    handleError(marketing.parentElement)
+    handleError(marketing.parentElement);
   }
 });
 
 function handleError(input) {
-  input.classList.add('payment-error');
-  setTimeout(() => { input.classList.remove('payment-error') }, 4000)
+  input.classList.add("payment-error");
+  setTimeout(() => {
+    input.classList.remove("payment-error");
+  }, 4000);
 }
 
 // Display Data
 const url = window.location.search;
 // const url = "127.0.0.1:5000/public/payment.html?carId=2?type=rec";
-const totalPrice = document.querySelector('.total-price-data');
-const subTotal = document.querySelector('.sub-price-data');
-const carName = document.querySelector('.main-car-name');
-const carImg = document.querySelector('.main-car-img');
+const totalPrice = document.querySelector(".total-price-data");
+const subTotal = document.querySelector(".sub-price-data");
+const carName = document.querySelector(".main-car-name");
+const carImg = document.querySelector(".main-car-img");
 
 let params = new URLSearchParams(url);
 let carType = null;
@@ -128,29 +130,27 @@ let displayCar = null;
 for (const key of params.values()) {
   console.log(key);
   carType = key.slice(-3);
-  carID = parseInt(key.slice(0, 2))
+  carID = parseInt(key.slice(0, 2));
 }
 
 if (carType === "rec") {
-
-  displayCar = recomendation_cars.find(car => {
+  displayCar = recomendation_cars.find((car) => {
     if (car.id === carID) {
-      return car
+      return car;
     }
-  })
+  });
 } else {
-  displayCar = popular_cars.find(car => {
+  displayCar = popular_cars.find((car) => {
     if (car.id === carID) {
-      return car
+      return car;
     }
-  })
+  });
 }
 
 if (displayCar) {
-  carName.textContent = displayCar.name
-  totalPrice.textContent = displayCar.price;
-  subTotal.textContent = displayCar.price;
+  carName.textContent = displayCar.name;
+  totalPrice.textContent = `$${displayCar.price}`;
+  subTotal.textContent = `$${displayCar.price}`;
   carImg.src = displayCar.img;
-  carImg.alt = displayCar.name
+  carImg.alt = displayCar.name;
 }
-
