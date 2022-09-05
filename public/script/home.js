@@ -32,7 +32,7 @@ popular_cars.forEach((car) => {
   });
   newCard.addEventListener(
     "click",
-    () => (window.location.href = `details.html?carId=${car.id}?type=pop`)
+    () => (window.location.href = `details.html?carId=${car.id}&type=pop`)
   );
   newCard.children[2].addEventListener("click", function (e) {
     e.stopPropagation();
@@ -47,7 +47,7 @@ recomendation_cars.slice(0, shownCardCount).forEach((car) => {
   let newCard = recomendationCarCardTemplate.cloneNode(true);
   newCard.addEventListener(
     "click",
-    () => (window.location.href = `details.html?carId=${car.id}?type=rec`)
+    () => (window.location.href = `details.html?carId=${car.id}&type=rec`)
   );
   newCard.id = `recomendation-car-card-${car.id}`;
   newCard.children[0].textContent = car.name;
@@ -87,7 +87,7 @@ const showMoreCar = () => {
       let newCard = recomendationCarsContainer[0].children[0].cloneNode(true);
       newCard.addEventListener(
         "click",
-        () => (window.location.href = `details.html?carId=${car.id}?type=rec`)
+        () => (window.location.href = `details.html?carId=${car.id}&type=rec`)
       );
       newCard.id = `recomendation-car-card-${car.id}`;
       newCard.children[0].textContent = car.name;
